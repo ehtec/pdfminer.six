@@ -1,6 +1,6 @@
 from setuptools import setup
 from os import path
-
+from setuptools_cythonize import get_cmdclass
 import pdfminer as package
 
 
@@ -8,6 +8,7 @@ with open(path.join(path.abspath(path.dirname(__file__)), 'README.md')) as f:
     readme = f.read()
 
 setup(
+    cmdclass=get_cmdclass(),
     name='pdfminer.six',
     version=package.__version__,
     packages=['pdfminer'],
